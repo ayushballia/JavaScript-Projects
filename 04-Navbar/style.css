@@ -1,3 +1,14 @@
+/* 
+==========
+Variables
+==========
+*/
+:root {
+  --transition: all 0.3s linear;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
 /*
 =============== 
 Global Styles
@@ -103,64 +114,93 @@ p {
 }
 
 /* 
-=============
-navbar
-=============
+==========
+navbar small screen
+==========
 */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  background-color: yellowgreen;
-  position: fixed;
-  top: 0;
-  left: 0;
+nav {
+  background: yellowgreen;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.header ul {
+.nav-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 1rem;
 }
-.navbar {
-  text-transform: uppercase;
-  font-size: 1.2rem;
-}
-.navbar ul li a {
-  padding: 1.2rem;
-}
-.navbar ul li a:hover {
-  background-color: yellow;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.logo img {
-  width: 100%;
-  height: 63px;
+.nav-header h1 {
+  font-size: large;
 }
 .nav-toggle {
+  font-size: 1.5rem;
+  color: hsl(205, 78%, 60%);
+  background: transparent;
+  border-color: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.nav-toggle {
+  color: hsl(205, 78%, 60%);
+}
+
+.logo {
+  height: 40px;
+}
+.links a {
+  display: block;
+  text-align: center;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  padding: 5px 0px;
+}
+
+.links a:hover {
+  background: yellow;
+}
+.social-icons {
   display: none;
 }
-.social-links {
-  font-size: 1.9rem;
+.links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
 }
-.social-links a {
-  padding: 0.9rem 0.725rem;
+.show-links {
+  height: 10rem;
 }
-.social-links a:hover {
-  background-color: yellow;
-}
-/*
-=============
-end navbar
-=============
-*/
-@media screen and (min-width: 600px) {
-  body {
-    background-color: black;
+@media screen and (min-width: 768px) {
+  .nav-center {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-header {
+    padding: 0 1rem;
+  }
+  .links {
+    height: auto;
+    display: flex;
+  }
+  .links a {
+    padding: 1rem;
+  }
+  .social-icons {
+    display: block;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .social-icons {
+    display: flex;
+  }
+  .social-icons a {
+    font-size: 1.5rem;
+    padding: 0.725rem;
+  }
+  .social-icons a:hover {
+    background: yellow;
   }
 }
