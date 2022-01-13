@@ -36,7 +36,7 @@ button {
   font-weight: 700;
   padding: 0.225rem;
   text-transform: uppercase;
-  border-radius: 0.25rem;
+  border-radius: 0.225rem;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: var(--transition);
@@ -135,6 +135,7 @@ asidebar
   display: flex;
   flex-direction: column;
   box-shadow: var(--dark-shadow);
+  transition: var(--transition);
   transform: translate(-100%);
 }
 .sidebar-header {
@@ -188,6 +189,6 @@ asidebar
     width: 40%;
   }
   .close-btn {
-  display: block;
-}
+    display: block;
+  }
 }
